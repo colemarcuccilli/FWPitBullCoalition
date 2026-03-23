@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Pits In The Park — 10th Anniversary",
+    "tag": "Annual Celebration",
+    "date": "August 16, 2025",
+    "day": "Saturday",
+    "time": "10:00 AM – 4:00 PM",
+    "location": "Freimann Square, Fort Wayne, IN",
+    "description": "Join us for our landmark 10th annual Pits In The Park celebration! A full day of family-friendly activities, vendor booths, live demonstrations, adoptable dogs, raffles, and more. This is our biggest event of the year — don't miss it!",
+    "highlights": ["Live demonstrations", "Vendor booths", "Adoptable dogs", "Raffle prizes", "Food trucks", "Kids' activities"],
+    "ticketLink": "https://square.link/u/LW7x59Jw",
+    "featured": true,
+    "status": "upcoming",
+    "year": "2025"
+  },
+  {
+    "id": "2",
+    "name": "Spring Adoption Event",
+    "tag": "Adoption Day",
+    "date": "May 3, 2025",
+    "day": "Saturday",
+    "time": "11:00 AM – 3:00 PM",
+    "location": "PetSmart — Lima Rd, Fort Wayne, IN",
+    "description": "Meet our adoptable dogs in person at this special spring adoption event. Our fosters and volunteers will be on hand to answer questions and help you find your perfect match.",
+    "highlights": ["Meet adoptable dogs", "Talk to fosters", "On-site applications", "Free goody bags"],
+    "ticketLink": "",
+    "featured": false,
+    "status": "upcoming",
+    "year": "2025"
+  },
+  {
+    "id": "3",
+    "name": "Community Walk for Pit Bulls",
+    "tag": "Community Event",
+    "date": "October 11, 2025",
+    "day": "Saturday",
+    "time": "9:00 AM – 12:00 PM",
+    "location": "Rivergreenway Trail, Fort Wayne, IN",
+    "description": "Lace up your walking shoes and join fellow pit bull advocates for a scenic walk along the Rivergreenway. All friendly, leashed dogs are welcome! Registration includes a t-shirt and goodie bag.",
+    "highlights": ["Scenic 2-mile walk", "Free t-shirt", "Dog-friendly", "Photo opportunities"],
+    "ticketLink": "",
+    "featured": false,
+    "status": "upcoming",
+    "year": "2025"
+  }
+]

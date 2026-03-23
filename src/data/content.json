@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title1": "Saving Lives.",
+    "title2": "Changing Minds.",
+    "subtitle": "Advocating for Pit Bull type dogs in Northern Indiana through education, rescue, and community — one family at a time."
+  },
+  "mission": {
+    "heading": "What Is FWPBC?",
+    "text": "Our Mission is to improve the conditions for Pit Bull type dogs in Northern Indiana through education, public awareness and by providing resources for Pit Bulls in need."
+  },
+  "stats": [
+    { "value": 500, "suffix": "+", "label": "Dogs Rescued", "color": "cyan" },
+    { "value": 10, "suffix": "+", "label": "Years Serving", "color": "purple" },
+    { "value": 1000, "suffix": "+", "label": "Families United", "color": "pink" },
+    { "value": 50, "suffix": "+", "label": "Active Volunteers", "color": "green" }
+  ],
+  "partners": [
+    { "icon": "🐾", "name": "Bissell Partners for Pets", "description": "National partner in pet adoption" },
+    { "icon": "🛒", "name": "Kroger Community Rewards", "description": "Supporting local nonprofits" },
+    { "icon": "🏥", "name": "Fort Wayne Animal Care", "description": "Local shelter partnership" },
+    { "icon": "🐕", "name": "Indiana SPCA", "description": "Statewide advocacy alliance" }
+  ],
+  "contact": {
+    "address": "P.O. Box 13064",
+    "city": "Fort Wayne, IN 46867",
+    "email": "fwpitbullcoalition@gmail.com",
+    "facebook": "https://www.facebook.com/FWPitBullCoalition",
+    "instagram": "https://www.instagram.com/fwpitbullcoalition",
+    "youtube": "https://www.youtube.com/@FWPitBullCoalition"
+  }
+}

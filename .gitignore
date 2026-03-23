@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+fwpbc-homepage-full.png
+.playwright-mcp/
+.env*.local
+public/uploads/
