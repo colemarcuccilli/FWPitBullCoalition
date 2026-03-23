@@ -91,7 +91,7 @@ function DogCard({ dog }: { dog: DogType }) {
   const styles = accentStyles[dog.accent] ?? accentStyles.cyan;
   return (
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${styles.border}`}
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${styles.border}`}
     >
       {/* Image or gradient placeholder */}
       <div
@@ -214,7 +214,7 @@ export default function HomePage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-white/60 px-8 py-6 text-white font-bold text-base hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                className="rounded-full border-white bg-white/90 px-8 py-6 text-indigo-700 font-semibold text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-md"
               >
                 <Heart className="mr-2 h-5 w-5" />
                 Donate Now
@@ -233,7 +233,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* MISSION                                                             */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative py-24 px-6 grid-bg">
+      <section className="relative py-16 px-6 bg-gray-50/80 grid-bg">
         <div className="mx-auto max-w-4xl">
           <div className="mb-10 flex items-center gap-3">
             <Shield className="h-6 w-6 text-[oklch(0.85_0.2_195)]" />
@@ -281,7 +281,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* STATS                                                               */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6 bg-gradient-to-r from-indigo-50/50 via-purple-50/50 to-pink-50/50">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.7_0.25_300/0.3)] bg-[oklch(0.7_0.25_300/0.08)] px-4 py-2 text-sm text-[oklch(0.7_0.25_300)]">
@@ -311,7 +311,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* FEATURED DOGS                                                       */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-24 px-6 grid-bg">
+      <section className="py-16 px-6 bg-white grid-bg">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -353,7 +353,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* EVENTS                                                              */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6 bg-gray-50/80">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.75_0.25_350/0.3)] bg-[oklch(0.75_0.25_350/0.08)] px-4 py-2 text-sm text-[oklch(0.75_0.25_350)]">
@@ -438,7 +438,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* HOW TO HELP                                                         */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-24 px-6 grid-bg">
+      <section className="py-16 px-6 bg-white grid-bg">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.8_0.2_150/0.3)] bg-[oklch(0.8_0.2_150/0.08)] px-4 py-2 text-sm text-[oklch(0.8_0.2_150)]">
@@ -535,7 +535,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* PARTNERS                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6 bg-gray-50/80">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.7_0.25_300/0.3)] bg-[oklch(0.7_0.25_300/0.08)] px-4 py-2 text-sm text-[oklch(0.7_0.25_300)]">
@@ -556,7 +556,7 @@ export default function HomePage() {
             {content.partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 text-center transition-all duration-300 hover:border-[oklch(0.7_0.25_300/0.4)] hover:shadow-md hover:-translate-y-1"
+                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 text-center transition-all duration-300 hover:border-[oklch(0.7_0.25_300/0.4)] hover:shadow-lg hover:-translate-y-1 cursor-pointer"
               >
                 <span className="text-4xl">{partner.icon}</span>
                 <div>
@@ -572,7 +572,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* NEWSLETTER / JOIN THE PACK CTA                                      */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative overflow-hidden py-32 px-6">
+      <section className="relative overflow-hidden py-20 px-6">
         {/* Gradient background */}
         <div
           aria-hidden="true"
@@ -605,7 +605,7 @@ export default function HomePage() {
             <span className="text-[oklch(0.85_0.2_195)]">Pack</span>
           </h2>
 
-          <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
+          <p className="mb-10 text-lg leading-relaxed text-white/80">
             Get updates on adoptable dogs, upcoming events, and ways to help
             delivered right to your inbox.
           </p>
@@ -626,7 +626,7 @@ export default function HomePage() {
             </Button>
           </form>
 
-          <p className="mt-4 text-xs text-muted-foreground">
+          <p className="mt-4 text-xs text-white/60">
             No spam, ever. Unsubscribe at any time.
           </p>
         </div>
