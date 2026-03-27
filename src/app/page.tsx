@@ -31,7 +31,7 @@ function PawWatermark() {
     <svg
       aria-hidden="true"
       viewBox="0 0 200 200"
-      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] opacity-[0.06] text-[#EE610E]"
+      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] text-[#EE610E]"
       fill="currentColor"
     >
       {/* Main pad */}
@@ -243,6 +243,8 @@ export default function HomePage() {
         </div>
         {/* Dark overlay so text is legible — lighter blur so photos show through */}
         <div className="absolute inset-0 bg-[#232323]/72" style={{ backdropFilter: "blur(3px)" }} aria-hidden="true" />
+        {/* Top gradient — blends from dark hero into this section */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0d1b3e] to-transparent z-[1]" aria-hidden="true" />
         {/* Brand color bottom border */}
         <div className="absolute bottom-0 left-0 right-0 h-[3px] gradient-border" />
 
@@ -458,6 +460,8 @@ export default function HomePage() {
           ))}
         </div>
         <div className="absolute inset-0 bg-white/88" style={{ backdropFilter: "blur(4px)" }} aria-hidden="true" />
+        {/* Top gradient — fades in from gray Events section above */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-gray-50 to-transparent z-[1]" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mb-14 text-center">
@@ -565,6 +569,8 @@ export default function HomePage() {
           ))}
         </div>
         <div className="absolute inset-0 bg-[#232323]/75" style={{ backdropFilter: "blur(4px)" }} aria-hidden="true" />
+        {/* Top gradient — white fade from HYC section above */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent z-[1]" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mb-14 text-center">

@@ -47,7 +47,7 @@ function ScrollPaw({
   const opacity = useTransform(
     scrollYProgress,
     [paw.scrollIn, paw.scrollPeak, paw.scrollOut],
-    [0, 0.72, 0]
+    [0, 0.85, 0]
   );
   const scale = useTransform(
     scrollYProgress,
@@ -68,7 +68,7 @@ function ScrollPaw({
         translateY: "-50%",
       }}
     >
-      <PawSvg size={64} opacity={1} />
+      <PawSvg size={72} opacity={1} />
     </motion.div>
   );
 }
@@ -85,7 +85,7 @@ export function WalkingPaws() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden z-20"
     >
       {TRAIL.map((paw) => (
         <ScrollPaw key={paw.id} paw={paw} scrollYProgress={scrollYProgress} />
