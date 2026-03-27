@@ -87,6 +87,7 @@ export function Navbar() {
               src="/assets/fwpbc-logo.avif"
               alt="FWPBC Logo"
               fill
+              sizes="40px"
               className="object-contain"
               priority
             />

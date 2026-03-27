@@ -159,14 +159,18 @@ export default function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-br from-[#232323] via-[#1a1a2e] to-[#0d1b3e]"
         />
-        {/* Radial glows — brand orange + blue */}
+        {/* Radial glows — orange dominant */}
         <div
           aria-hidden="true"
-          className="absolute top-[-10%] left-[-10%] h-[60vw] w-[60vw] rounded-full bg-[#EE610E]/15 blur-3xl"
+          className="absolute top-[-10%] left-[-10%] h-[70vw] w-[70vw] rounded-full bg-[#EE610E]/25 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-10%] right-[-10%] h-[60vw] w-[60vw] rounded-full bg-[#116dff]/15 blur-3xl"
+          className="absolute bottom-[-10%] right-[-10%] h-[50vw] w-[50vw] rounded-full bg-[#116dff]/12 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute top-[30%] right-[20%] h-[30vw] w-[30vw] rounded-full bg-[#EE610E]/15 blur-3xl"
         />
         {/* Grid overlay */}
         <div aria-hidden="true" className="absolute inset-0 grid-bg opacity-60" />
@@ -179,7 +183,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
-          <div className="flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm text-white">
+          <div className="flex items-center gap-2 rounded-full border border-[#EE610E]/50 bg-[#EE610E]/15 px-4 py-2 text-sm text-[#EE610E]">
             <Sparkles className="h-4 w-4" />
             Fort Wayne Pit Bull Coalition
             <Sparkles className="h-4 w-4" />
@@ -251,8 +255,8 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        {/* Dark overlay so text is legible */}
-        <div className="absolute inset-0 bg-[#232323]/80 backdrop-blur-sm" aria-hidden="true" />
+        {/* Dark overlay so text is legible — lighter blur so photos show through */}
+        <div className="absolute inset-0 bg-[#232323]/72" style={{ backdropFilter: "blur(3px)" }} aria-hidden="true" />
         {/* Brand color bottom border */}
         <div className="absolute bottom-0 left-0 right-0 h-[3px] gradient-border" />
 
@@ -454,10 +458,20 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* HOW TO HELP                                                         */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-16 px-6 bg-white grid-bg">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative py-16 px-6 overflow-hidden">
+        {/* Pitbull photo mosaic backdrop */}
+        <div className="absolute inset-0 grid grid-cols-3" aria-hidden="true">
+          {["/assets/pitbull-3.avif", "/assets/pitbull-1.avif", "/assets/pitbull-2.avif"].map((src, i) => (
+            <div key={i} className="relative overflow-hidden">
+              <Image src={src} alt="" fill className="object-cover" sizes="33vw" />
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-white/88" style={{ backdropFilter: "blur(4px)" }} aria-hidden="true" />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#EE610E]/30 bg-[#EE610E]/08 px-4 py-2 text-sm text-[#EE610E]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#EE610E]/30 bg-[#EE610E]/10 px-4 py-2 text-sm text-[#EE610E]">
               <Heart className="h-4 w-4" />
               Get Involved
             </div>
@@ -551,33 +565,43 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* PARTNERS                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-16 px-6 bg-gray-50/80">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative py-16 px-6 overflow-hidden">
+        {/* Pitbull photo mosaic backdrop */}
+        <div className="absolute inset-0 grid grid-cols-3" aria-hidden="true">
+          {["/assets/pitbull-2.avif", "/assets/pitbull-3.avif", "/assets/pitbull-1.avif"].map((src, i) => (
+            <div key={i} className="relative overflow-hidden">
+              <Image src={src} alt="" fill className="object-cover" sizes="33vw" />
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-[#232323]/75" style={{ backdropFilter: "blur(4px)" }} aria-hidden="true" />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#116dff]/30 bg-[#116dff]/8 px-4 py-2 text-sm text-[#116dff]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#EE610E]/40 bg-[#EE610E]/15 px-4 py-2 text-sm text-[#EE610E]">
               <Star className="h-4 w-4" />
               Community Partners
             </div>
-            <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+            <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               Supported By{" "}
-              <span className="text-[#116dff]">Partners</span>
+              <span className="text-[#EE610E]">Partners</span>
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-4 text-white/70">
               We are grateful for the organizations that stand with us.
             </p>
           </div>
 
-          {/* Partner cards — horizontal scroll on mobile */}
+          {/* Partner cards */}
           <div className="flex flex-wrap items-center justify-center gap-6">
             {content.partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 text-center transition-all duration-300 hover:border-[#116dff]/40 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg p-6 text-center transition-all duration-300 hover:border-[#EE610E]/50 hover:bg-white/15 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
               >
                 <span className="text-4xl">{partner.icon}</span>
                 <div>
-                  <p className="font-bold text-foreground text-sm">{partner.name}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{partner.description}</p>
+                  <p className="font-bold text-white text-sm">{partner.name}</p>
+                  <p className="mt-1 text-xs text-white/70">{partner.description}</p>
                 </div>
               </div>
             ))}

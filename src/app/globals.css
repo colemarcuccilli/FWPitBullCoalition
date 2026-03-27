@@ -138,7 +138,7 @@
   50% { background-position: 100% 50%; }
 }
 .gradient-border {
-  background: linear-gradient(135deg, #EE610E, #116dff, #EE610E, #116dff);
+  background: linear-gradient(135deg, #EE610E, #EE610E, #116dff, #EE610E, #EE610E);
   background-size: 300% 300%;
   animation: gradient-shift 4s ease infinite;
 }
