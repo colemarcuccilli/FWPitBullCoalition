@@ -17,20 +17,21 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroParticles } from "@/components/hero-particles";
 import { StatsCounter } from "@/components/stats-counter";
+import { WalkingPaws } from "@/components/walking-paws";
 import { getDogs, getEvents, getContent } from "@/lib/data";
 import type { Dog as DogType } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
 // ---------------------------------------------------------------------------
-// Paw print SVG watermark
+// Paw print SVG watermark — orange, used in featured dogs section corner
 // ---------------------------------------------------------------------------
 function PawWatermark() {
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 200 200"
-      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] opacity-[0.04] text-[#116dff]"
+      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] opacity-[0.06] text-[#EE610E]"
       fill="currentColor"
     >
       {/* Main pad */}
@@ -38,20 +39,8 @@ function PawWatermark() {
       {/* Toes */}
       <ellipse cx="54" cy="98" rx="18" ry="22" transform="rotate(-15 54 98)" />
       <ellipse cx="82" cy="74" rx="16" ry="20" transform="rotate(-5 82 74)" />
-      <ellipse
-        cx="118"
-        cy="74"
-        rx="16"
-        ry="20"
-        transform="rotate(5 118 74)"
-      />
-      <ellipse
-        cx="146"
-        cy="98"
-        rx="18"
-        ry="22"
-        transform="rotate(15 146 98)"
-      />
+      <ellipse cx="118" cy="74" rx="16" ry="20" transform="rotate(5 118 74)" />
+      <ellipse cx="146" cy="98" rx="18" ry="22" transform="rotate(15 146 98)" />
     </svg>
   );
 }
@@ -177,9 +166,6 @@ export default function HomePage() {
 
         {/* Floating particles (client component) */}
         <HeroParticles />
-
-        {/* Paw watermark */}
-        <PawWatermark />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
@@ -334,8 +320,12 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* FEATURED DOGS                                                       */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-16 px-6 bg-white grid-bg">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative py-16 px-6 bg-white grid-bg overflow-hidden">
+        {/* Walking paw prints — scroll-triggered, fade in/out as you scroll through */}
+        <WalkingPaws />
+        {/* Large paw watermark in the bottom-right corner */}
+        <PawWatermark />
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mb-14 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#116dff]/30 bg-[#116dff]/08 px-4 py-2 text-sm text-[#116dff]">
