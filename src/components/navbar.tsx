@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Dog, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,9 +19,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
-  { label: "Adopt", href: "/adopt" },
   { label: "Shop", href: "/shop" },
-  { label: "Donate", href: "/donate" },
   { label: "Volunteer", href: "/volunteer" },
   { label: "Resources", href: "/resources" },
   { label: "Honor Page", href: "/honor" },
@@ -45,14 +44,14 @@ function NavLink({
       className={cn(
         "relative text-sm font-medium tracking-wide transition-colors duration-200 group",
         active
-          ? "text-neon-cyan"
-          : "text-gray-600 hover:text-neon-cyan"
+          ? "text-[#EE610E]"
+          : "text-gray-600 hover:text-[#EE610E]"
       )}
     >
       {label}
       <span
         className={cn(
-          "absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-neon-cyan transition-transform duration-300 group-hover:scale-x-100",
+          "absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[#EE610E] transition-transform duration-300 group-hover:scale-x-100",
           active && "scale-x-100"
         )}
       />
@@ -83,20 +82,19 @@ export function Navbar() {
           className="flex items-center gap-2.5 group shrink-0"
           aria-label="Fort Wayne Pit Bull Coalition — Home"
         >
-          <div
-            className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-lg",
-              "bg-neon-cyan/10 border border-neon-cyan/30",
-              "transition-all duration-300 group-hover:bg-neon-cyan/20 group-hover:border-neon-cyan/60",
-              "glow-cyan"
-            )}
-          >
-            <Dog className="h-5 w-5 text-neon-cyan" strokeWidth={1.75} />
+          <div className="relative h-10 w-10 transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/assets/fwpbc-logo.avif"
+              alt="FWPBC Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <span
             className={cn(
               "font-mono text-base font-bold tracking-[0.15em] uppercase",
-              "text-neon-cyan"
+              "text-[#EE610E]"
             )}
           >
             FWPBC
@@ -127,12 +125,7 @@ export function Navbar() {
           <Link href="/donate">
             <Button
               size="sm"
-              className={cn(
-                "font-semibold tracking-wide text-xs uppercase",
-                "bg-neon-cyan/15 border border-neon-cyan/40 text-neon-cyan",
-                "hover:bg-neon-cyan/25 hover:border-neon-cyan/70 hover:text-neon-cyan",
-                "transition-all duration-200 glow-cyan"
-              )}
+              className="font-semibold tracking-wide text-xs uppercase bg-[#EE610E]/10 border border-[#EE610E]/40 text-[#EE610E] hover:bg-[#EE610E]/20 hover:border-[#EE610E]/70 transition-all duration-200"
               variant="ghost"
             >
               Donate
@@ -141,12 +134,7 @@ export function Navbar() {
           <Link href="/adopt">
             <Button
               size="sm"
-              className={cn(
-                "font-semibold tracking-wide text-xs uppercase",
-                "bg-neon-purple/15 border border-neon-purple/40 text-neon-purple",
-                "hover:bg-neon-purple/25 hover:border-neon-purple/70 hover:text-neon-purple",
-                "transition-all duration-200 glow-purple"
-              )}
+              className="font-semibold tracking-wide text-xs uppercase bg-[#116dff]/10 border border-[#116dff]/40 text-[#116dff] hover:bg-[#116dff]/20 hover:border-[#116dff]/70 transition-all duration-200"
               variant="ghost"
             >
               Adopt
@@ -163,7 +151,7 @@ export function Navbar() {
                   variant="ghost"
                   size="icon-sm"
                   aria-label="Open navigation menu"
-                  className="border border-neon-cyan/30 text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan/60"
+                  className="border border-[#EE610E]/30 text-[#EE610E] hover:bg-[#EE610E]/10 hover:border-[#EE610E]/60"
                 />
               }
             >
@@ -180,10 +168,15 @@ export function Navbar() {
             >
               <SheetHeader className="border-b border-gray-200 pb-4">
                 <SheetTitle className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neon-cyan/10 border border-neon-cyan/30">
-                    <Dog className="h-4 w-4 text-neon-cyan" strokeWidth={1.75} />
+                  <div className="relative h-8 w-8">
+                    <Image
+                      src="/assets/fwpbc-logo.avif"
+                      alt="FWPBC Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
-                  <span className="font-mono text-sm font-bold tracking-[0.15em] uppercase text-neon-cyan">
+                  <span className="font-mono text-sm font-bold tracking-[0.15em] uppercase text-[#EE610E]">
                     FWPBC
                   </span>
                 </SheetTitle>
@@ -206,8 +199,8 @@ export function Navbar() {
                         "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium",
                         "transition-all duration-150",
                         active
-                          ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/30"
-                          : "text-gray-600 hover:bg-neon-cyan/5 hover:text-neon-cyan border border-transparent"
+                          ? "bg-[#EE610E]/10 text-[#EE610E] border border-[#EE610E]/30"
+                          : "text-gray-600 hover:bg-[#EE610E]/5 hover:text-[#EE610E] border border-transparent"
                       )}
                       onClick={() => setMobileOpen(false)}
                     >
@@ -221,11 +214,7 @@ export function Navbar() {
               <div className="flex flex-col gap-2 px-2 pb-4 pt-2 border-t border-gray-200">
                 <Link href="/donate" className="w-full" onClick={() => setMobileOpen(false)}>
                   <Button
-                    className={cn(
-                      "w-full font-semibold tracking-wide text-xs uppercase",
-                      "bg-neon-cyan/15 border border-neon-cyan/40 text-neon-cyan",
-                      "hover:bg-neon-cyan/25 hover:border-neon-cyan/70"
-                    )}
+                    className="w-full font-semibold tracking-wide text-xs uppercase bg-[#EE610E]/15 border border-[#EE610E]/40 text-[#EE610E] hover:bg-[#EE610E]/25 hover:border-[#EE610E]/70"
                     variant="ghost"
                   >
                     Donate Now
@@ -233,11 +222,7 @@ export function Navbar() {
                 </Link>
                 <Link href="/adopt" className="w-full" onClick={() => setMobileOpen(false)}>
                   <Button
-                    className={cn(
-                      "w-full font-semibold tracking-wide text-xs uppercase",
-                      "bg-neon-purple/15 border border-neon-purple/40 text-neon-purple",
-                      "hover:bg-neon-purple/25 hover:border-neon-purple/70"
-                    )}
+                    className="w-full font-semibold tracking-wide text-xs uppercase bg-[#116dff]/15 border border-[#116dff]/40 text-[#116dff] hover:bg-[#116dff]/25 hover:border-[#116dff]/70"
                     variant="ghost"
                   >
                     Adopt a Dog

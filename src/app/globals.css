@@ -79,12 +79,12 @@
   --chart-4: oklch(0.7 0.2 80);
   --chart-5: oklch(0.6 0.22 350);
   --radius: 0.75rem;
-  /* Futuristic accent colors — vivid on light backgrounds */
-  --neon-cyan: oklch(0.55 0.22 200);
-  --neon-purple: oklch(0.5 0.25 300);
-  --neon-pink: oklch(0.6 0.25 350);
+  /* Brand accent colors */
+  --neon-cyan: #116dff;
+  --neon-purple: #116dff;
+  --neon-pink: #EE610E;
   --neon-green: oklch(0.55 0.22 150);
-  --neon-orange: oklch(0.7 0.2 65);
+  --neon-orange: #EE610E;
   --sidebar: oklch(0.96 0.005 270);
   --sidebar-foreground: oklch(0.15 0.02 270);
   --sidebar-primary: oklch(0.55 0.22 200);
@@ -127,8 +127,8 @@
 /* Grid background pattern — light */
 .grid-bg {
   background-image:
-    linear-gradient(oklch(0.55 0.22 200 / 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0.55 0.22 200 / 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(17, 109, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 109, 255, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -138,7 +138,7 @@
   50% { background-position: 100% 50%; }
 }
 .gradient-border {
-  background: linear-gradient(135deg, oklch(0.55 0.22 200), oklch(0.5 0.25 300), oklch(0.6 0.25 350), oklch(0.55 0.22 200));
+  background: linear-gradient(135deg, #EE610E, #116dff, #EE610E, #116dff);
   background-size: 300% 300%;
   animation: gradient-shift 4s ease infinite;
 }

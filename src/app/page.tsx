@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Heart,
   Users,
@@ -29,7 +30,7 @@ function PawWatermark() {
     <svg
       aria-hidden="true"
       viewBox="0 0 200 200"
-      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] opacity-[0.04] text-[oklch(0.85_0.2_195)]"
+      className="pointer-events-none absolute right-[-4rem] bottom-[-4rem] w-[36rem] opacity-[0.04] text-[#116dff]"
       fill="currentColor"
     >
       {/* Main pad */}
@@ -61,29 +62,29 @@ function PawWatermark() {
 
 const accentStyles: Record<string, { border: string; text: string; btn: string }> = {
   cyan: {
-    border: "border-[oklch(0.85_0.2_195/0.5)]",
-    text: "text-[oklch(0.85_0.2_195)]",
-    btn: "border-[oklch(0.85_0.2_195/0.6)] text-[oklch(0.85_0.2_195)] hover:bg-[oklch(0.85_0.2_195/0.15)]",
+    border: "border-[#116dff]/50",
+    text: "text-[#116dff]",
+    btn: "border-[#116dff]/60 text-[#116dff] hover:bg-[#116dff]/15",
   },
   pink: {
-    border: "border-[oklch(0.75_0.25_350/0.5)]",
-    text: "text-[oklch(0.75_0.25_350)]",
-    btn: "border-[oklch(0.75_0.25_350/0.6)] text-[oklch(0.75_0.25_350)] hover:bg-[oklch(0.75_0.25_350/0.15)]",
+    border: "border-[#EE610E]/50",
+    text: "text-[#EE610E]",
+    btn: "border-[#EE610E]/60 text-[#EE610E] hover:bg-[#EE610E]/15",
   },
   purple: {
-    border: "border-[oklch(0.7_0.25_300/0.5)]",
-    text: "text-[oklch(0.7_0.25_300)]",
-    btn: "border-[oklch(0.7_0.25_300/0.6)] text-[oklch(0.7_0.25_300)] hover:bg-[oklch(0.7_0.25_300/0.15)]",
+    border: "border-[#116dff]/50",
+    text: "text-[#116dff]",
+    btn: "border-[#116dff]/60 text-[#116dff] hover:bg-[#116dff]/15",
   },
   green: {
-    border: "border-[oklch(0.8_0.2_150/0.5)]",
-    text: "text-[oklch(0.8_0.2_150)]",
-    btn: "border-[oklch(0.8_0.2_150/0.6)] text-[oklch(0.8_0.2_150)] hover:bg-[oklch(0.8_0.2_150/0.15)]",
+    border: "border-[#116dff]/50",
+    text: "text-[#116dff]",
+    btn: "border-[#116dff]/60 text-[#116dff] hover:bg-[#116dff]/15",
   },
   orange: {
-    border: "border-[oklch(0.85_0.2_65/0.5)]",
-    text: "text-[oklch(0.85_0.2_65)]",
-    btn: "border-[oklch(0.85_0.2_65/0.6)] text-[oklch(0.85_0.2_65)] hover:bg-[oklch(0.85_0.2_65/0.15)]",
+    border: "border-[#EE610E]/50",
+    text: "text-[#EE610E]",
+    btn: "border-[#EE610E]/60 text-[#EE610E] hover:bg-[#EE610E]/15",
   },
 };
 
@@ -153,19 +154,19 @@ export default function HomePage() {
       {/* HERO                                                                */}
       {/* ------------------------------------------------------------------ */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
-        {/* Vivid gradient hero background */}
+        {/* Brand gradient hero background */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-800"
+          className="absolute inset-0 bg-gradient-to-br from-[#232323] via-[#1a1a2e] to-[#0d1b3e]"
         />
-        {/* Radial glows */}
+        {/* Radial glows — brand orange + blue */}
         <div
           aria-hidden="true"
-          className="absolute top-[-10%] left-[-10%] h-[60vw] w-[60vw] rounded-full bg-purple-500/20 blur-3xl"
+          className="absolute top-[-10%] left-[-10%] h-[60vw] w-[60vw] rounded-full bg-[#EE610E]/15 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-10%] right-[-10%] h-[60vw] w-[60vw] rounded-full bg-sky-400/20 blur-3xl"
+          className="absolute bottom-[-10%] right-[-10%] h-[60vw] w-[60vw] rounded-full bg-[#116dff]/15 blur-3xl"
         />
         {/* Grid overlay */}
         <div aria-hidden="true" className="absolute inset-0 grid-bg opacity-60" />
@@ -202,7 +203,8 @@ export default function HomePage() {
             <Link href="/adopt">
               <Button
                 size="lg"
-                className="group relative overflow-hidden rounded-full bg-white px-8 py-6 text-indigo-700 font-bold text-base hover:bg-white/90 shadow-lg transition-all duration-300 hover:scale-105"
+                className="group relative overflow-hidden rounded-full bg-[#116dff] px-8 py-6 text-white font-bold text-base hover:bg-[#116dff]/90 shadow-lg transition-all duration-300 hover:scale-105"
+                style={{ boxShadow: "0 0 30px rgba(17,109,255,0.4)" }}
               >
                 <Dog className="mr-2 h-5 w-5" />
                 Adopt a Pit Bull
@@ -214,7 +216,8 @@ export default function HomePage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-white bg-white/90 px-8 py-6 text-indigo-700 font-semibold text-base hover:bg-white transition-all duration-300 hover:scale-105 shadow-md"
+                className="rounded-full border-[#EE610E] bg-[#EE610E] px-8 py-6 text-white font-semibold text-base hover:bg-[#EE610E]/90 transition-all duration-300 hover:scale-105 shadow-md"
+                style={{ boxShadow: "0 0 30px rgba(238,97,14,0.3)" }}
               >
                 <Heart className="mr-2 h-5 w-5" />
                 Donate Now
@@ -233,34 +236,50 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* MISSION                                                             */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative py-16 px-6 bg-gray-50/80 grid-bg">
-        <div className="mx-auto max-w-4xl">
+      <section className="relative py-16 px-6 overflow-hidden">
+        {/* Pitbull photo mosaic backdrop */}
+        <div className="absolute inset-0 grid grid-cols-3" aria-hidden="true">
+          {["/assets/pitbull-1.avif", "/assets/pitbull-2.avif", "/assets/pitbull-3.avif"].map((src, i) => (
+            <div key={i} className="relative overflow-hidden">
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          ))}
+        </div>
+        {/* Dark overlay so text is legible */}
+        <div className="absolute inset-0 bg-[#232323]/80 backdrop-blur-sm" aria-hidden="true" />
+        {/* Brand color bottom border */}
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] gradient-border" />
+
+        <div className="relative z-10 mx-auto max-w-4xl">
           <div className="mb-10 flex items-center gap-3">
-            <Shield className="h-6 w-6 text-[oklch(0.85_0.2_195)]" />
-            <span className="text-sm font-medium uppercase tracking-widest text-[oklch(0.85_0.2_195)]">
+            <Shield className="h-6 w-6 text-[#EE610E]" />
+            <span className="text-sm font-medium uppercase tracking-widest text-[#EE610E]">
               Our Purpose
             </span>
           </div>
 
-          <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+          <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             {content.mission.heading.replace("FWPBC?", "").trim()}{" "}
             <span
-              className="text-[oklch(0.85_0.2_195)]"
-              style={{
-                textShadow:
-                  "0 0 10px oklch(0.85 0.2 195 / 0.5), 0 0 40px oklch(0.85 0.2 195 / 0.2)",
-              }}
+              className="text-[#EE610E]"
+              style={{ textShadow: "0 0 20px rgba(238,97,14,0.6)" }}
             >
               FWPBC?
             </span>
           </h2>
 
           {/* Mission card */}
-          <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg p-8 sm:p-12">
+          <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-xl p-8 sm:p-12 backdrop-blur-md">
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] gradient-border" />
 
-            <p className="text-xl leading-relaxed text-muted-foreground sm:text-2xl">
+            <p className="text-xl leading-relaxed text-white/90 sm:text-2xl">
               {content.mission.text}
             </p>
 
@@ -268,7 +287,7 @@ export default function HomePage() {
               <Link href="/about">
                 <Button
                   variant="outline"
-                  className="rounded-full border-[oklch(0.85_0.2_195/0.5)] text-[oklch(0.85_0.2_195)] hover:bg-[oklch(0.85_0.2_195/0.1)]"
+                  className="rounded-full border-[#EE610E]/60 text-white bg-[#EE610E]/20 hover:bg-[#EE610E]/40 hover:border-[#EE610E]"
                 >
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -281,16 +300,16 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* STATS                                                               */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-16 px-6 bg-gradient-to-r from-indigo-50/50 via-purple-50/50 to-pink-50/50">
+      <section className="py-16 px-6 bg-gradient-to-r from-[#EE610E]/5 via-[#116dff]/5 to-[#EE610E]/5">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.7_0.25_300/0.3)] bg-[oklch(0.7_0.25_300/0.08)] px-4 py-2 text-sm text-[oklch(0.7_0.25_300)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#116dff]/30 bg-[#116dff]/08 px-4 py-2 text-sm text-[#116dff]">
               <Star className="h-4 w-4" />
               Impact by the Numbers
             </div>
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               Making a Real{" "}
-              <span className="text-[oklch(0.7_0.25_300)]">Difference</span>
+              <span className="text-[#116dff]">Difference</span>
             </h2>
           </div>
 
@@ -315,18 +334,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[oklch(0.85_0.2_195/0.3)] bg-[oklch(0.85_0.2_195/0.08)] px-4 py-2 text-sm text-[oklch(0.85_0.2_195)]">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#116dff]/30 bg-[#116dff]/08 px-4 py-2 text-sm text-[#116dff]">
                 <Dog className="h-4 w-4" />
                 Available for Adoption
               </div>
               <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
                 Ready For Their{" "}
                 <span
-                  className="text-[oklch(0.85_0.2_195)]"
-                  style={{
-                    textShadow:
-                      "0 0 10px oklch(0.85 0.2 195 / 0.5), 0 0 40px oklch(0.85 0.2 195 / 0.2)",
-                  }}
+                  className="text-[#116dff]"
+                  style={{ textShadow: "0 0 20px rgba(17,109,255,0.4)" }}
                 >
                   Forever Home
                 </span>
@@ -335,7 +351,7 @@ export default function HomePage() {
             <Link href="/adopt">
               <Button
                 variant="outline"
-                className="shrink-0 rounded-full border-[oklch(0.85_0.2_195/0.5)] text-[oklch(0.85_0.2_195)] hover:bg-[oklch(0.85_0.2_195/0.1)]"
+                className="shrink-0 rounded-full border-[#116dff]/50 text-[#116dff] hover:bg-[#116dff]/10"
               >
                 View All Dogs <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -356,13 +372,13 @@ export default function HomePage() {
       <section className="py-16 px-6 bg-gray-50/80">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.75_0.25_350/0.3)] bg-[oklch(0.75_0.25_350/0.08)] px-4 py-2 text-sm text-[oklch(0.75_0.25_350)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#EE610E]/30 bg-[#EE610E]/08 px-4 py-2 text-sm text-[#EE610E]">
               <Calendar className="h-4 w-4" />
               Community Events
             </div>
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               Upcoming{" "}
-              <span className="text-[oklch(0.75_0.25_350)]">Events</span>
+              <span className="text-[#EE610E]">Events</span>
             </h2>
           </div>
 
@@ -370,15 +386,15 @@ export default function HomePage() {
           {featuredEvent && (
             <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg">
               {/* Top gradient bar */}
-              <div className="h-1 w-full bg-gradient-to-r from-[oklch(0.85_0.2_195)] via-[oklch(0.75_0.25_350)] to-[oklch(0.7_0.25_300)]" />
+              <div className="h-1 w-full bg-gradient-to-r from-[#EE610E] via-[#116dff] to-[#EE610E]" />
 
               <div className="flex flex-col gap-8 p-8 sm:flex-row sm:items-center sm:p-12">
                 {/* Date badge */}
                 <div
-                  className="flex shrink-0 flex-col items-center justify-center rounded-2xl border border-[oklch(0.75_0.25_350/0.4)] bg-[oklch(0.75_0.25_350/0.1)] p-6 text-center min-w-[120px]"
-                  style={{ boxShadow: "0 0 20px oklch(0.75 0.25 350 / 0.2)" }}
+                  className="flex shrink-0 flex-col items-center justify-center rounded-2xl border border-[#EE610E]/40 bg-[#EE610E]/10 p-6 text-center min-w-[120px]"
+                  style={{ boxShadow: "0 0 20px rgba(238,97,14,0.2)" }}
                 >
-                  <span className="text-xs font-bold uppercase tracking-widest text-[oklch(0.75_0.25_350)]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#EE610E]">
                     {featuredEvent.tag}
                   </span>
                   <span className="mt-1 text-4xl font-black text-foreground">
@@ -392,10 +408,10 @@ export default function HomePage() {
                 {/* Info */}
                 <div className="flex flex-1 flex-col gap-4">
                   <div className="flex flex-wrap items-center gap-3">
-                    <Badge className="border border-[oklch(0.75_0.25_350/0.4)] bg-[oklch(0.75_0.25_350/0.1)] text-[oklch(0.75_0.25_350)]">
+                    <Badge className="border border-[#EE610E]/40 bg-[#EE610E]/10 text-[#EE610E]">
                       Featured Event
                     </Badge>
-                    <Badge className="border border-[oklch(0.8_0.2_150/0.4)] bg-[oklch(0.8_0.2_150/0.1)] text-[oklch(0.8_0.2_150)]">
+                    <Badge className="border border-[#116dff]/40 bg-[#116dff]/10 text-[#116dff]">
                       {featuredEvent.date}
                     </Badge>
                   </div>
@@ -412,8 +428,8 @@ export default function HomePage() {
                     {featuredEvent.ticketLink ? (
                       <Link href={featuredEvent.ticketLink} target="_blank" rel="noopener noreferrer">
                         <Button
-                          className="rounded-full bg-[oklch(0.75_0.25_350)] font-bold text-white hover:bg-[oklch(0.78_0.23_350)]"
-                          style={{ boxShadow: "0 0 20px oklch(0.75 0.25 350 / 0.3)" }}
+                          className="rounded-full bg-[#EE610E] font-bold text-white hover:bg-[#EE610E]/90"
+                          style={{ boxShadow: "0 0 20px rgba(238,97,14,0.3)" }}
                         >
                           Get Tickets <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
@@ -422,7 +438,7 @@ export default function HomePage() {
                     <Link href="/events">
                       <Button
                         variant="outline"
-                        className="rounded-full border-[oklch(0.75_0.25_350/0.4)] text-[oklch(0.75_0.25_350)] hover:bg-[oklch(0.75_0.25_350/0.1)]"
+                        className="rounded-full border-[#EE610E]/40 text-[#EE610E] hover:bg-[#EE610E]/10"
                       >
                         View All Events
                       </Button>
@@ -441,23 +457,23 @@ export default function HomePage() {
       <section className="py-16 px-6 bg-white grid-bg">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.8_0.2_150/0.3)] bg-[oklch(0.8_0.2_150/0.08)] px-4 py-2 text-sm text-[oklch(0.8_0.2_150)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#EE610E]/30 bg-[#EE610E]/08 px-4 py-2 text-sm text-[#EE610E]">
               <Heart className="h-4 w-4" />
               Get Involved
             </div>
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               How You Can{" "}
-              <span className="text-[oklch(0.8_0.2_150)]">Help</span>
+              <span className="text-[#EE610E]">Help</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {/* Foster */}
-            <Card className="group relative overflow-hidden rounded-2xl border-[oklch(0.75_0.25_350/0.4)] bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[oklch(0.75_0.25_350)] to-transparent" />
+            <Card className="group relative overflow-hidden rounded-2xl border-[#EE610E]/40 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#EE610E] to-transparent" />
               <CardContent className="flex flex-col gap-5 p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.75_0.25_350/0.4)] bg-[oklch(0.75_0.25_350/0.1)]">
-                  <Heart className="h-7 w-7 text-[oklch(0.75_0.25_350)]" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#EE610E]/40 bg-[#EE610E]/10">
+                  <Heart className="h-7 w-7 text-[#EE610E]" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-xl font-bold text-foreground">Foster</h3>
@@ -470,7 +486,7 @@ export default function HomePage() {
                 <Link href="/volunteer" className="mt-auto">
                   <Button
                     variant="outline"
-                    className="w-full rounded-full border-[oklch(0.75_0.25_350/0.5)] text-[oklch(0.75_0.25_350)] hover:bg-[oklch(0.75_0.25_350/0.15)]"
+                    className="w-full rounded-full border-[#EE610E]/50 text-[#EE610E] hover:bg-[#EE610E]/15"
                   >
                     Become a Foster <ArrowRight className="ml-1 h-3 w-3" />
                   </Button>
@@ -479,11 +495,11 @@ export default function HomePage() {
             </Card>
 
             {/* Volunteer */}
-            <Card className="group relative overflow-hidden rounded-2xl border-[oklch(0.8_0.2_150/0.4)] bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[oklch(0.8_0.2_150)] to-transparent" />
+            <Card className="group relative overflow-hidden rounded-2xl border-[#116dff]/40 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#116dff] to-transparent" />
               <CardContent className="flex flex-col gap-5 p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.8_0.2_150/0.4)] bg-[oklch(0.8_0.2_150/0.1)]">
-                  <Users className="h-7 w-7 text-[oklch(0.8_0.2_150)]" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#116dff]/40 bg-[#116dff]/10">
+                  <Users className="h-7 w-7 text-[#116dff]" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-xl font-bold text-foreground">Volunteer</h3>
@@ -496,7 +512,7 @@ export default function HomePage() {
                 <Link href="/volunteer" className="mt-auto">
                   <Button
                     variant="outline"
-                    className="w-full rounded-full border-[oklch(0.8_0.2_150/0.5)] text-[oklch(0.8_0.2_150)] hover:bg-[oklch(0.8_0.2_150/0.15)]"
+                    className="w-full rounded-full border-[#116dff]/50 text-[#116dff] hover:bg-[#116dff]/15"
                   >
                     Join the Team <ArrowRight className="ml-1 h-3 w-3" />
                   </Button>
@@ -505,11 +521,11 @@ export default function HomePage() {
             </Card>
 
             {/* Donate */}
-            <Card className="group relative overflow-hidden rounded-2xl border-[oklch(0.85_0.2_195/0.4)] bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[oklch(0.85_0.2_195)] to-transparent" />
+            <Card className="group relative overflow-hidden rounded-2xl border-[#116dff]/40 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#116dff] to-transparent" />
               <CardContent className="flex flex-col gap-5 p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.85_0.2_195/0.4)] bg-[oklch(0.85_0.2_195/0.1)]">
-                  <DollarSign className="h-7 w-7 text-[oklch(0.85_0.2_195)]" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#116dff]/40 bg-[#116dff]/10">
+                  <DollarSign className="h-7 w-7 text-[#116dff]" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-xl font-bold text-foreground">Donate</h3>
@@ -521,7 +537,7 @@ export default function HomePage() {
                 </div>
                 <Link href="/donate" className="mt-auto">
                   <Button
-                    className="w-full rounded-full bg-[oklch(0.85_0.2_195)] font-bold text-white hover:bg-[oklch(0.9_0.18_195)]"
+                    className="w-full rounded-full bg-[#116dff] font-bold text-white hover:bg-[#116dff]/90"
                   >
                     Donate Now <ArrowRight className="ml-1 h-3 w-3" />
                   </Button>
@@ -538,13 +554,13 @@ export default function HomePage() {
       <section className="py-16 px-6 bg-gray-50/80">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[oklch(0.7_0.25_300/0.3)] bg-[oklch(0.7_0.25_300/0.08)] px-4 py-2 text-sm text-[oklch(0.7_0.25_300)]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#116dff]/30 bg-[#116dff]/8 px-4 py-2 text-sm text-[#116dff]">
               <Star className="h-4 w-4" />
               Community Partners
             </div>
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               Supported By{" "}
-              <span className="text-[oklch(0.7_0.25_300)]">Partners</span>
+              <span className="text-[#116dff]">Partners</span>
             </h2>
             <p className="mt-4 text-muted-foreground">
               We are grateful for the organizations that stand with us.
@@ -556,7 +572,7 @@ export default function HomePage() {
             {content.partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 text-center transition-all duration-300 hover:border-[oklch(0.7_0.25_300/0.4)] hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                className="flex min-w-[220px] flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 text-center transition-all duration-300 hover:border-[#116dff]/40 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
               >
                 <span className="text-4xl">{partner.icon}</span>
                 <div>
@@ -576,7 +592,7 @@ export default function HomePage() {
         {/* Gradient background */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-800"
+          className="absolute inset-0 bg-gradient-to-br from-[#232323] via-[#1a1a2e] to-[#0d1b3e]"
         />
         <div
           aria-hidden="true"
@@ -585,11 +601,11 @@ export default function HomePage() {
         {/* Glow blobs */}
         <div
           aria-hidden="true"
-          className="absolute top-[-20%] left-[-20%] h-[80vw] w-[80vw] rounded-full bg-white/5 blur-3xl"
+          className="absolute top-[-20%] left-[-20%] h-[80vw] w-[80vw] rounded-full bg-[#EE610E]/10 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute bottom-[-20%] right-[-20%] h-[80vw] w-[80vw] rounded-full bg-white/5 blur-3xl"
+          className="absolute bottom-[-20%] right-[-20%] h-[80vw] w-[80vw] rounded-full bg-[#116dff]/10 blur-3xl"
         />
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-[2px] gradient-border" />
@@ -602,7 +618,7 @@ export default function HomePage() {
 
           <h2 className="mb-6 text-5xl font-extrabold uppercase tracking-tight text-white sm:text-6xl">
             Join The{" "}
-            <span className="text-[oklch(0.85_0.2_195)]">Pack</span>
+            <span className="text-[#EE610E]">Pack</span>
           </h2>
 
           <p className="mb-10 text-lg leading-relaxed text-white/80">
@@ -619,7 +635,7 @@ export default function HomePage() {
             />
             <Button
               type="submit"
-              className="shrink-0 rounded-full bg-white px-8 py-3 font-bold text-indigo-700 hover:bg-white/90 shadow-md transition-all duration-300 hover:scale-105"
+              className="shrink-0 rounded-full bg-[#EE610E] px-8 py-3 font-bold text-white hover:bg-[#EE610E]/90 shadow-md transition-all duration-300 hover:scale-105"
             >
               Subscribe
               <ArrowRight className="ml-2 h-4 w-4" />
