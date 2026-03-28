@@ -3,40 +3,37 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
-// Paw SVG shape — same geometry as hero particles
-function PawSvg({ size, opacity }: { size: number; opacity: number }) {
+// Large paw SVG — same shape as the corner watermark
+function PawSvg({ size }: { size: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 100 100"
-      fill={`rgba(238,97,14,${opacity})`}
+      viewBox="0 0 200 200"
+      fill="#EE610E"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ filter: `drop-shadow(0 0 ${size * 0.15}px rgba(238,97,14,0.5))` }}
     >
-      {/* Main central pad */}
-      <ellipse cx="50" cy="68" rx="24" ry="20" />
+      {/* Main pad */}
+      <ellipse cx="100" cy="140" rx="42" ry="36" />
       {/* Toes */}
-      <ellipse cx="24" cy="44" rx="11" ry="13" transform="rotate(-15 24 44)" />
-      <ellipse cx="40" cy="30" rx="10" ry="12" transform="rotate(-5 40 30)" />
-      <ellipse cx="60" cy="30" rx="10" ry="12" transform="rotate(5 60 30)" />
-      <ellipse cx="76" cy="44" rx="11" ry="13" transform="rotate(15 76 44)" />
+      <ellipse cx="54"  cy="98"  rx="18" ry="22" transform="rotate(-15 54 98)"  />
+      <ellipse cx="82"  cy="74"  rx="16" ry="20" transform="rotate(-5 82 74)"   />
+      <ellipse cx="118" cy="74"  rx="16" ry="20" transform="rotate(5 118 74)"   />
+      <ellipse cx="146" cy="98"  rx="18" ry="22" transform="rotate(15 146 98)"  />
     </svg>
   );
 }
 
-// Walking trail definition — positions along the section, bottom → top
-// x = left%, y = top-of-section%, rotate = slight angle for natural gait
+// Walking trail — big paws alternating left / right, bottom → top of section
 const TRAIL = [
-  { id: 1, x: "57%", y: "80%", rotate: -14, scrollIn: 0.00, scrollPeak: 0.13, scrollOut: 0.28 },
-  { id: 2, x: "67%", y: "65%", rotate:  10, scrollIn: 0.15, scrollPeak: 0.28, scrollOut: 0.43 },
-  { id: 3, x: "54%", y: "50%", rotate: -12, scrollIn: 0.30, scrollPeak: 0.43, scrollOut: 0.58 },
-  { id: 4, x: "68%", y: "35%", rotate:   9, scrollIn: 0.45, scrollPeak: 0.58, scrollOut: 0.73 },
-  { id: 5, x: "53%", y: "20%", rotate: -10, scrollIn: 0.60, scrollPeak: 0.73, scrollOut: 0.88 },
-  { id: 6, x: "66%", y:  "6%", rotate:  11, scrollIn: 0.75, scrollPeak: 0.88, scrollOut: 1.00 },
+  { id: 1, x: "23%", y: "88%", rotate: -14, scrollIn: 0.00, scrollPeak: 0.13, scrollOut: 0.28 },
+  { id: 2, x: "72%", y: "72%", rotate:  10, scrollIn: 0.15, scrollPeak: 0.28, scrollOut: 0.43 },
+  { id: 3, x: "20%", y: "56%", rotate: -12, scrollIn: 0.30, scrollPeak: 0.43, scrollOut: 0.58 },
+  { id: 4, x: "74%", y: "40%", rotate:   9, scrollIn: 0.45, scrollPeak: 0.58, scrollOut: 0.73 },
+  { id: 5, x: "21%", y: "24%", rotate: -10, scrollIn: 0.60, scrollPeak: 0.73, scrollOut: 0.88 },
+  { id: 6, x: "73%", y:  "8%", rotate:  11, scrollIn: 0.75, scrollPeak: 0.88, scrollOut: 1.00 },
 ];
 
-// Each paw as its own component so it can call useTransform as a hook
 function ScrollPaw({
   paw,
   scrollYProgress,
@@ -47,12 +44,12 @@ function ScrollPaw({
   const opacity = useTransform(
     scrollYProgress,
     [paw.scrollIn, paw.scrollPeak, paw.scrollOut],
-    [0, 0.85, 0]
+    [0, 0.55, 0]
   );
   const scale = useTransform(
     scrollYProgress,
     [paw.scrollIn, paw.scrollPeak, paw.scrollOut],
-    [0.6, 1, 0.6]
+    [0.5, 1, 0.5]
   );
 
   return (
@@ -68,7 +65,7 @@ function ScrollPaw({
         translateY: "-50%",
       }}
     >
-      <PawSvg size={72} opacity={1} />
+      <PawSvg size={240} />
     </motion.div>
   );
 }
@@ -82,10 +79,11 @@ export function WalkingPaws() {
   });
 
   return (
+    // z-[1] keeps paws behind the z-10 content div (dog cards)
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden z-20"
+      className="pointer-events-none absolute inset-0 overflow-hidden z-[1]"
     >
       {TRAIL.map((paw) => (
         <ScrollPaw key={paw.id} paw={paw} scrollYProgress={scrollYProgress} />

@@ -243,8 +243,8 @@ export default function HomePage() {
         </div>
         {/* Dark overlay so text is legible — lighter blur so photos show through */}
         <div className="absolute inset-0 bg-[#232323]/72" style={{ backdropFilter: "blur(3px)" }} aria-hidden="true" />
-        {/* Top gradient — blends from dark hero into this section */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0d1b3e] to-transparent z-[1]" aria-hidden="true" />
+        {/* Top gradient — white fade into photos */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent z-[1]" aria-hidden="true" />
         {/* Brand color bottom border */}
         <div className="absolute bottom-0 left-0 right-0 h-[3px] gradient-border" />
 
